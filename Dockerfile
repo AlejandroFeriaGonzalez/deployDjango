@@ -1,21 +1,13 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.12-slim
+FROM python:3.12
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+WORKDIR /app
 
-# Set the working directory
-WORKDIR /code
+COPY requirements.txt .
 
-# Install dependencies
-COPY requirements.txt /code/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the project files
-COPY . /code/
+COPY . .
 
-# Exponer el puerto en el que la aplicación correrá
 EXPOSE 8080
 
-CMD ["python", "manage.py", "runserver", "8080"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
