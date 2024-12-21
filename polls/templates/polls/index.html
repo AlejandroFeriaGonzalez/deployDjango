@@ -5,6 +5,35 @@
     <meta charset="UTF-8">
     <title>Encuesta</title>
     <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            color: #007BFF;
+        }
+        p {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
 {% if latest_question_list %}
